@@ -1,0 +1,6 @@
+C:\Users\bkrieger\Documents\Projects\Bitwarden.Desktop.AutoFill\release\bw.exe
+C:\Users\bkrieger\Documents\Projects\Bitwarden.Desktop.AutoFill\release\Bitwarden.Desktop.AutoFill.UI.exe
+C:\Users\bkrieger\Documents\Projects\Bitwarden.Desktop.AutoFill\release\Bitwarden.Desktop.AutoFill.UI.dll
+C:\Users\bkrieger\Documents\Projects\Bitwarden.Desktop.AutoFill\release\Bitwarden.Desktop.AutoFill.UI.deps.json
+C:\Users\bkrieger\Documents\Projects\Bitwarden.Desktop.AutoFill\release\Bitwarden.Desktop.AutoFill.UI.runtimeconfig.json
+C:\Users\bkrieger\Documents\Projects\Bitwarden.Desktop.AutoFill\release\Bitwarden.Desktop.AutoFill.UI.pdb
