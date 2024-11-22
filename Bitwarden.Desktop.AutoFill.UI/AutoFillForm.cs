@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using Bitwarden.Desktop.AutoFill.UI.AppSettings;
 using Bitwarden.Desktop.AutoFill.UI.Bitwarden;
 
 namespace Bitwarden.Desktop.AutoFill.UI;
@@ -201,7 +202,7 @@ public partial class AutoFillForm : Form
         var windowTitle = TargetWindowInfo.Title;
         try
         {
-            var client = BitwardenClient.GetClient();
+            var client = BitwardenClient.Create();
             var items = client.ListItems();
             credentials = items
                 // Filter items matching to windows title

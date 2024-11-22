@@ -1,3 +1,4 @@
+using Bitwarden.Desktop.AutoFill.UI.AppSettings;
 using Bitwarden.Desktop.AutoFill.UI.Bitwarden;
 
 namespace Bitwarden.Desktop.AutoFill.UI;
@@ -218,7 +219,7 @@ public partial class SettingsForm : Form, IDisposable
 
     private void HandleReload(object sender, EventArgs e)
     {
-        BitwardenClient.ForgetClient();
+        BitwardenClient.Reset();
         Settings.BitwardenPassword.Forget();
         Settings.Reload();
         FillFormFields();

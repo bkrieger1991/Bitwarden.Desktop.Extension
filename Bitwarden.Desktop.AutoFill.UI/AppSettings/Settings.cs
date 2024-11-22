@@ -2,7 +2,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Bitwarden.Desktop.AutoFill.UI.Settings;
+namespace Bitwarden.Desktop.AutoFill.UI.AppSettings;
 
 [Serializable]
 public class Settings

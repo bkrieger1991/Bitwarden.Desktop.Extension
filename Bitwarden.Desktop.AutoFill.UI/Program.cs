@@ -1,12 +1,12 @@
+using Bitwarden.Desktop.AutoFill.UI.AppSettings;
 using Bitwarden.Desktop.AutoFill.UI.Bitwarden;
-using Microsoft.Extensions.DependencyInjection;
 using Timer = System.Threading.Timer;
 
 namespace Bitwarden.Desktop.AutoFill.UI;
 
 public static class Program
 {
-    private static Settings.Settings _settings = null!;
+    private static Settings _settings = null!;
 
     /// <summary>
     ///  The main entry point for the application.
@@ -21,12 +21,7 @@ public static class Program
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        var settings = Settings.Read();
-        var provider = new ServiceCollection()
-            .AddSingleton(settings)
-            .AddSingleton<BitwardenClientFactory>()
-            .BuildServiceProvider();
-
+        _settings = Settings.Read();
         _ = new Timer(
             (_) =>
             {
@@ -45,6 +40,7 @@ public static class Program
 
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
+        BitwardenClient.SetSettings(_settings);
         Application.Run(new SettingsForm()
         {
             Settings = _settings
@@ -57,6 +53,6 @@ public static class Program
         {
             _settings.BitwardenPassword.Forget();
         }
-        BitwardenClient.ForgetClient();
+        BitwardenClient.Reset();
     }
 }

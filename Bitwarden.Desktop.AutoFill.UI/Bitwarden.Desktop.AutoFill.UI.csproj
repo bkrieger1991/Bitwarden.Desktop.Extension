@@ -8,7 +8,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationIcon>bitwarden.ico</ApplicationIcon>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <PublishAot>true</PublishAot>
   </PropertyGroup>
 
   <ItemGroup>

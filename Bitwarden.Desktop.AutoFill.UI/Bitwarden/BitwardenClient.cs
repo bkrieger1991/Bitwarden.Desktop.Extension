@@ -1,5 +1,6 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Nodes;
+using Bitwarden.Desktop.AutoFill.UI.AppSettings;
 using Bitwarden.Desktop.AutoFill.UI.Bitwarden.Models;
 
 namespace Bitwarden.Desktop.AutoFill.UI.Bitwarden;
@@ -9,7 +10,44 @@ using System.Text;
 
 public class BitwardenClient : IDisposable
 {
+    private static BitwardenClient? _client;
+    private static Settings? _settings;
     private string _session;
+
+    public static void SetSettings(Settings settings)
+    {
+        _settings = settings;
+    }
+
+    public static BitwardenClient Create()
+    {
+        Console.WriteLine("Getting bitwarden client...");
+        if (_client == null)
+        {
+            if (_settings == null)
+            {
+                throw new Exception(
+                    "Bitwarden client can't be created, since settings are not available. Call SetSettings() before creating client."
+                );
+            }
+
+            Console.WriteLine("Bitwarden client is not ready. Creating...");
+            _client = new BitwardenClient(
+                _settings.BitwardenUri,
+                _settings.BitwardenEmail,
+                _settings.BitwardenPassword.Read()
+            );
+            Console.WriteLine($"Bitwarden client was created.");
+        }
+
+        return _client;
+    }
+
+    public static void Reset()
+    {
+        Console.WriteLine("Forgetting stored client session...");
+        _client = null;
+    }
 
     public BitwardenClient(string url, string userName, string password)
     {
