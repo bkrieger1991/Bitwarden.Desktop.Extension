@@ -1,3 +1,4 @@
+using Bitwarden.Desktop.AutoFill.UI.AppSettings;
 using Bitwarden.Desktop.AutoFill.UI.Bitwarden;
 
 namespace Bitwarden.Desktop.AutoFill.UI;

@@ -1,4 +1,6 @@
-﻿namespace Bitwarden.Desktop.AutoFill.UI.Bitwarden;
+﻿using Bitwarden.Desktop.AutoFill.UI.AppSettings;
+
+namespace Bitwarden.Desktop.AutoFill.UI.Bitwarden;
 
 public class BitwardenClientFactory
 {

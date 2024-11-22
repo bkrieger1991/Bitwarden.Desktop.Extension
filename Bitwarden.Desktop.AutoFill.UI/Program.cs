@@ -1,3 +1,4 @@
+using Bitwarden.Desktop.AutoFill.UI.AppSettings;
 using Bitwarden.Desktop.AutoFill.UI.Bitwarden;
 using Microsoft.Extensions.DependencyInjection;
 using Timer = System.Threading.Timer;
@@ -6,7 +7,7 @@ namespace Bitwarden.Desktop.AutoFill.UI;
 
 public static class Program
 {
-    private static Settings.Settings _settings = null!;
+    private static Settings _settings = null!;
 
     /// <summary>
     ///  The main entry point for the application.
